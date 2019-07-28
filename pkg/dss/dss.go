@@ -73,12 +73,12 @@ func createParamString(params map[string]string) string {
 }
 
 // Call will request the DSS with a path and a map of request parameters.
-// The function will return a string with the Json result from the request.
-func Call(path string, params map[string]string) string {
+// The function will return a []byte with the JSON result from the request.
+func Call(path string, params map[string]string) []byte {
 
 	log.Debugf("Call to DSS for path %s with parameters %s", path, params)
 
-	var result string
+	var result []byte
 
 	// Login to the server
 	err := login()
@@ -94,9 +94,8 @@ func Call(path string, params map[string]string) string {
 	if err != nil {
 		log.Panicf("Failed to request %s from DSS -> %s", path, err)
 	} else {
-		read, _ := ioutil.ReadAll(response.Body)
-		result = string(read)
-		log.Tracef("Result from %s -> %s", path, result)
+		result, _ := ioutil.ReadAll(response.Body)
+		log.Tracef("Result from %s -> %s", path, string(result))
 	}
 	defer response.Body.Close()
 
