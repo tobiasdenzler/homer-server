@@ -1,0 +1,6 @@
+# Configuration of your Digitalstrom server
+server:
+  # Server address
+  address: https://127.0.0.1:8080
+  # Valid login token
+  logintoken: d1308cb...
