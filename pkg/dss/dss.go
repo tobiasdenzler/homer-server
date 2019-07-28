@@ -30,8 +30,6 @@ func login() error {
 
 	var err error
 
-	log.Println(sessionToken)
-
 	// We need to get a valid session token if it does not already exist
 	if sessionToken != "" {
 		log.Println("Session token already exists ->", sessionToken)
@@ -59,6 +57,8 @@ func login() error {
 	return err
 }
 
+// This will take a map of query parameters and format them.
+// Format: key1=value1&key2=value2
 func createParamString(params map[string]string) string {
 	b := new(bytes.Buffer)
 	for key, value := range params {
