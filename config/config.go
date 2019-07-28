@@ -7,8 +7,9 @@ import (
 // Config is based on config/config.yaml
 var Config = struct {
 	Server struct {
-		Address    string
-		LoginToken string
+		Address     string
+		LoginToken  string
+		WaitPolling int
 	}
 	Log struct {
 		Level string

@@ -4,6 +4,8 @@ server:
   address: https://127.0.0.1:8080
   # Valid login token
   logintoken: d1308cb...
+  # Number of second to wait between polling of events
+  waitpolling: 10
 
 log:
   # one of panic|fatal|error|warn|info|debug|trace

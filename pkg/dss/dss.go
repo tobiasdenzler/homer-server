@@ -94,7 +94,7 @@ func Call(path string, params map[string]string) []byte {
 	if err != nil {
 		log.Panicf("Failed to request %s from DSS -> %s", path, err)
 	} else {
-		result, _ := ioutil.ReadAll(response.Body)
+		result, _ = ioutil.ReadAll(response.Body)
 		log.Tracef("Result from %s -> %s", path, string(result))
 	}
 	defer response.Body.Close()
