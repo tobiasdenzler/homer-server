@@ -4,3 +4,8 @@ server:
   address: https://127.0.0.1:8080
   # Valid login token
   logintoken: d1308cb...
+
+log:
+  # one of panic|fatal|error|warn|info|debug|trace
+  # check https://github.com/sirupsen/logrus
+  level: info
